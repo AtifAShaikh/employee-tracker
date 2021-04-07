@@ -14,7 +14,14 @@ Employee.init(
         name: {
             type: DataTypes.STRING,
             allowNull: false,
-        }
+        },
+        dept_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'department',
+                key: 'id',
+            }
+        },
     },
     {
         sequelize,

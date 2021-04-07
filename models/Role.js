@@ -11,10 +11,28 @@ Role.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false,
-        }
+        },
+        salary: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        employee_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'role',
+                key: 'id',
+            }
+        },
+        // department_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'department',
+        //         key: 'id',
+        //     }
+        // }
     },
     {
         sequelize,
